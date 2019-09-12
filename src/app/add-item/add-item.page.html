@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label position ="floating">Nombre de tu producto</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position ="floating">Descripcion rápida</ion-label>
+        <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position ="floating">Precio</ion-label>
+        <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label >Categoria</ion-label>
+  <ion-select interface="popover">
+    <ion-select-option>
+      Farmacia
+    </ion-select-option>
+    <ion-select-option>
+        Alimentos
+      </ion-select-option>
+      <ion-select-option>
+          Abarrotes
+        </ion-select-option>
+        <ion-select-option>
+            Autos y Motos
+          </ion-select-option>
+  </ion-select>
+    </ion-item>
+  </ion-list>
+<ion-button expand="block" color ="secondary">Agregar</ion-button>
+</ion-content>

@@ -1,0 +1,157 @@
+<ion-header >
+  <ion-toolbar color="secondary" text-center>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+    <ion-list>
+        <ion-radio-group>
+          <ion-list-header>
+            <ion-label>Registrarme como</ion-label>
+          </ion-list-header>
+      
+          <ion-item>
+            <ion-label>Usuario</ion-label>
+            <ion-radio slot="start" value="1" (click)="active(1)"></ion-radio>
+          </ion-item>
+          <ion-item>
+              <ion-label>Repartidor</ion-label>
+              <ion-radio slot="start" value="2" (click)="active(2)" ></ion-radio>
+            </ion-item>
+            <ion-item>
+                <ion-label>Negocio</ion-label>
+                <ion-radio slot="start" value="3" (click)="active(3)"></ion-radio>
+              </ion-item>
+    
+        </ion-radio-group>
+      </ion-list>
+      <div *ngIf="img">
+        <img src="assets/img/register.png">
+      </div>
+      <div *ngIf="user">
+        <ion-card>
+          <ion-card-header text-center>
+            Usuario
+          </ion-card-header>
+          <ion-card-content>
+              <ion-item>
+                  <ion-label position="floating">Nombre</ion-label>
+                  <ion-input placeholder ="Escribe tu nombre"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Correo electronico</ion-label>
+                    <ion-input placeholder ="Escribe tu correo"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label position="floating">Contraseña</ion-label>
+                      <ion-input type="password" placeholder ="Contraseña"></ion-input>
+                    </ion-item>
+<ion-button expand ="block" color ="secondary">Crear cuenta</ion-button>
+          </ion-card-content>
+        </ion-card>
+
+
+    
+        
+      </div>
+      <div *ngIf="employe">
+          <ion-card>
+              <ion-card-header text-center>
+                Repartidor
+              </ion-card-header>
+              <ion-card-content>
+                  <ion-item>
+                      <ion-label position="floating">Nombre</ion-label>
+                      <ion-input placeholder ="Escribe tu nombre"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Correo electronico</ion-label>
+                        <ion-input placeholder ="Escribe tu correo"></ion-input>
+                      </ion-item>
+                      <ion-item>
+                          <ion-label position="floating">Contraseña</ion-label>
+                          <ion-input type="password" placeholder ="Contraseña"></ion-input>
+                        </ion-item>
+                        <ion-label>Tipo de reparto</ion-label>
+                        <ion-item>
+                       
+                        <ion-label>Automovil</ion-label>
+                       <ion-checkbox slot="end"></ion-checkbox>
+
+                          </ion-item>
+                          <ion-item>
+                              <ion-checkbox slot="end"></ion-checkbox>
+                              <ion-label>Motocicleta/motoneta</ion-label>
+                          </ion-item>
+                          <ion-item>
+                              <ion-label>Bicicleta</ion-label>
+                              <ion-checkbox slot="end"></ion-checkbox>
+                          </ion-item>
+    <ion-button expand ="block" color ="secondary">Crear cuenta</ion-button>
+              </ion-card-content>
+            </ion-card>
+
+    
+      </div>
+      <div *ngIf="business">
+          <ion-card>
+              <ion-card-header text-center>
+                Negocio
+              </ion-card-header>
+              <ion-card-content>
+                  <ion-item>
+                      <ion-label position="floating">Nombre del negocio</ion-label>
+                      <ion-input [(ngModel)]="nameBusiness"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Correo electronico</ion-label>
+                        <ion-input [(ngModel)]="emailBusiness"></ion-input>
+                      </ion-item>
+                      <ion-item>
+                          <ion-label position="floating">Contraseña</ion-label>
+                          <ion-input type="password" [(ngModel)]="passwordBusiness"></ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label position="floating">Dirección del negocio</ion-label>
+                            <ion-input [(ngModel)]="direccionBusiness"></ion-input>
+                          </ion-item>
+                        <ion-item>
+
+                          <ion-label>Categoria</ion-label>
+                          <ion-select interface="popover" [(ngModel)]='category'>
+                            <ion-select-option>Alimentos y bebidas</ion-select-option>
+                            <ion-select-option>Tienda de Abarrotes</ion-select-option>
+                            <ion-select-option>Carniceria</ion-select-option>
+                            <ion-select-option>Farmacia</ion-select-option>
+                            <ion-select-option>Comida rapida</ion-select-option>
+                            <ion-select-option>Ferreteria</ion-select-option>
+                            <ion-select-option>Tlapaleria</ion-select-option>
+                            <ion-select-option>Tortilleria</ion-select-option>
+                            <ion-select-option>Papeleria</ion-select-option>
+                            <ion-select-option>Recauderia</ion-select-option>
+                            <ion-select-option>Refaccionaria</ion-select-option>
+                            <ion-select-option>Ropa</ion-select-option>
+                            <ion-select-option>Productos de belleza</ion-select-option>
+                            <ion-select-option>Regalos</ion-select-option>
+                          </ion-select>
+                        </ion-item>
+                        <ion-item (click)="mapUbication()">
+                          <ion-label>Ubicación del negocio</ion-label>
+                          <ion-buttons slot="end">
+                          <ion-icon color ="secondary" name="globe"></ion-icon>
+                          </ion-buttons>
+                        </ion-item>
+    <ion-button expand ="block" color ="secondary" (click)="registerBusiness()">Crear cuenta</ion-button>
+              </ion-card-content>
+            </ion-card>
+            
+
+    
+      </div>
+
+    
+
+</ion-content>

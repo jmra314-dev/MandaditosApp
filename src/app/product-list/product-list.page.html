@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title>
+     Mi pedido
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openCart()" >
+        <ion-badge *ngIf="cart.length > 0">{{ cart.length }}</ion-badge>
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+  
+     
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+  <div *ngFor="let cat of items" class="category-block">
+ <ion-list>
+    <ion-row no-padding class="category-banner">
+        <ion-col text-left button tappable (click)="cat.expanded = !cat.expanded" align-self-center>
+          {{ cat.category }}
+        </ion-col>
+      </ion-row>
+   
+      <ion-slides [options]="sliderConfig">
+        <ion-slide *ngFor="let product of cat.products">
+          <div *ngIf="cat.expanded">
+            <ion-card>
+              
+                <ion-card-title>
+                  <ion-label>
+                    <p><strong>{{ product.name }}</strong></p>
+                    <p> ${{ product.price }}</p>
+                  </ion-label>
+                </ion-card-title>
+                <ion-card-content>
+                  <ion-label>
+                    <p>{{product.descripcion}}</p>
+                  </ion-label>
+                  <div style="text-align:center">
+                    <ion-row>
+                      <ion-col col-4></ion-col>
+                      <ion-col col-4>  <img src="assets/img/imgPedidos.png" ></ion-col>
+                      <ion-col col-4></ion-col>
+                    </ion-row>
+                    
+                  </div>
+                 
+                  <ion-button color ="secondary" expand="block" (click)="addToCart(product)">Agregar producto</ion-button>
+                </ion-card-content>
+             
+            </ion-card>
+          </div>
+        </ion-slide>
+      </ion-slides>
+ </ion-list>
+  
+ 
+  </div>
+</ion-content>

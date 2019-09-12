@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar text-center color ="secondary">
+    <ion-title>Categorias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <div>
+   <img src ="assets/img/tienda.png">
+ </div>
+ 
+     
+         <ion-slides [options]="sliderConfig">
+           <ion-slide *ngFor="let cat of items">
+             <div >
+               <ion-card (click)="showSomething(1)" color="tertiary">
+                 
+                   <ion-card-title>
+                     <ion-label>
+                       <p><strong>{{ cat.category}}</strong></p>
+                     
+                     </ion-label>
+                   </ion-card-title>
+                   <ion-card-content text-center>
+                     <ion-label>
+                       <p>Descripcion de la categoria</p>
+                     </ion-label>
+                     <div>
+                       <ion-row>
+                         <ion-col col-4></ion-col>
+                         <ion-col col-4><img src="assets/img/producto.png"></ion-col>
+                         <ion-col col-4></ion-col>
+                       </ion-row>
+                     </div>
+
+                   </ion-card-content>
+                
+               </ion-card>
+             </div>
+           </ion-slide>
+         </ion-slides>
+  
+    
+     
+</ion-content>

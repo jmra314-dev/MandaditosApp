@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar text-center color="secondary">
+    <ion-title>Farmacia</ion-title>
+    <ion-buttons slot ="end" (click)="addCart()">
+      <ion-icon color ="light" name ="cart"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+        <ion-list>
+            <ion-item *ngFor="let item of infoProduct" >
+          
+              <ion-img slot = "start"src={{item.img}} style="width: 10%; height: 10%;"> </ion-img>
+              <ion-label>        
+                  <p>{{item.nombre}}</p>
+                  <p>{{item.precio}}</p>
+                  <p>{{item.descripcion}}</p>
+              </ion-label>
+              <ion-checkbox (click)=add(item) [(ngModel)]="item.isChecked"></ion-checkbox>
+          
+          
+            </ion-item>
+          </ion-list>
+  
+     
+    
+          
+</ion-content>
